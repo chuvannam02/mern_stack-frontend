@@ -1,0 +1,115 @@
+.navbar-container {
+  display: flex;
+  justify-content: flex-end;
+  background-color: #20232a;
+  gap: 20px;
+  align-items: center;
+  color: white;
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        &:hover {
+          background-color: #f1f1f1;
+        }
+      }
+    }
+    .dropbtn {
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      background-color: #20232a;
+      color: white;
+    }
+    &:hover {
+      .dropdown-content {
+        display: block;
+        color: rgb(97, 218, 251);
+      }
+      .dropdown {
+        background-color: #3e8e41;
+      }
+    }
+  }
+  .navbar-user {
+    padding-top: 10px;
+    font-weight: 700;
+    font-size: 18px;
+  }
+
+  .active {
+    padding: 18px 20px;
+    color: rgb(97, 218, 251);
+    border-bottom: 4px solid rgb(97, 218, 251);
+  }
+}
+.navbar_fixed {
+  display: flex;
+  color: white;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+  transition: 0.3 ease-in-out;
+  background-color: #20232a;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+
+  .active {
+    padding: 18px 20px;
+    color: rgb(97, 218, 251);
+    border-bottom: 4px solid rgb(97, 218, 251);
+  }
+  &:hover:not(:focus) {
+    color: rgb(97, 218, 251);
+  }
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        &:hover {
+          background-color: #f1f1f1;
+        }
+      }
+    }
+    .dropbtn {
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      background-color: #20232a;
+      color: white;
+    }
+    &:hover {
+      .dropdown-content {
+        display: block;
+      }
+      .dropdown {
+        background-color: #3e8e41;
+      }
+    }
+  }
+}

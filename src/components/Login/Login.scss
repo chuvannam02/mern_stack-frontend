@@ -1,0 +1,71 @@
+.login {
+  margin-top: 60px;
+  .App {
+    padding: 30px;
+    background-color: #20232a;
+    color: white;
+    border-radius: 15px;
+    width: 500px;
+    outline: none;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    .title {
+      margin-left: 12px;
+      color: white;
+    }
+    .forget_password {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 10px;
+      button {
+        border-radius: 12px;
+        margin-left: 12px;
+        width: 100px;
+        height: 50px;
+        outline: none;
+        border: none;
+        background-color: white;
+        color: black;
+        font-size: 20px;
+        font-weight: 600;
+        &:hover {
+          opacity:0.9;
+        }
+      }
+      p {
+        &:hover {
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      }
+    }
+    .login_account {
+      text-align: center;
+      p {
+        &:hover {
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      }
+    }
+    .form-control {
+      background-color: #20232a;
+      border: none;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      margin-bottom: 10px;
+      color: white;
+      input {
+        color: black;
+        border: none;
+        outline: none;
+        border-radius: 8px;
+        height: 35px;
+        &:focus {
+          border: 1px solid black;
+        }
+      }
+    }
+  }
+}
