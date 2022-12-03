@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { FiShoppingCart } from "react-icons/fi";
 import { getAllProducts } from "../redux/apiRequest";
@@ -22,12 +22,19 @@ const Products = () => {
   const productsList = useSelector(
     (state) => state.products.products?.allProducts
   );
+  const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     getAllProducts(dispatch);
+    if (getAllProducts) {
+      setIsLoading(false);
+    }
   }, []);
   return (
     <>
-    {productsList ? (
+    {isLoading === true ? (
+        <div>Đang tải tài nguyên</div>
+      ) : (
+    <>
      <div className="products">
         {productsList?.map((product, index) => {
           return (
@@ -52,8 +59,7 @@ const Products = () => {
           );
         })}
       </div>
-     ) : (
-       <div>Đang trong quá trình tải tài nguyên <div>
+</>
      )}
       <Footer />
     </>
