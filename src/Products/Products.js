@@ -27,7 +27,8 @@ const Products = () => {
   }, []);
   return (
     <>
-      <div className="products">
+    {productsList ? (
+     <div className="products">
         {productsList?.map((product, index) => {
           return (
             <div key={index}>
@@ -51,6 +52,9 @@ const Products = () => {
           );
         })}
       </div>
+     ) : (
+       <div>Đang trong quá trình tải tài nguyên <div>
+     )}
       <Footer />
     </>
   );
