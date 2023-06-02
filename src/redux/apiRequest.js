@@ -43,9 +43,10 @@ export const loginUser = async (user, dispatch, history) => {
   dispatch(loginStart());
   try {
     const res = await axios.post("https://mern-stack-backend-kw0h.onrender.com/login", user, {
-      withCredentials: true,
+      withCredntials: true,
+      credentials: 'include'
     });
-    // localStorage.setItem("token", res.data.accessToken);
+    localStorage.setItem("token", res.data.accessToken);
     dispatch(loginSuccess(res.data));
     history.push("/");
   } catch (error) {
@@ -77,7 +78,8 @@ export const getAllUsers = async (accessToken, dispatch,axiosJWT) => {
       headers: {
         token: accessToken,
       },
-      withCredentials: true,
+      withCredntials: true,
+      credentials: 'include'
     });
     dispatch(getUsersSuccess(res.data));
   } catch (error) {
@@ -95,6 +97,8 @@ export const updateUser = async (accessToken, dispatch, id, user) => {
           token: accessToken,
           "Content-type": "application/json",
         },
+        withCredntials: true,
+        credentials: 'include'
       }
     );
     dispatch(updateUserSuccess(res.data));
@@ -111,7 +115,8 @@ export const deleteUser = async (accessToken, dispatch, id,axiosJWT) => {
         token: accessToken,
         "Content-type": "application/json",
       },
-      withCredentials: true,
+      withCredntials: true,
+      credentials: 'include'
     });
     dispatch(deleteUserSuccess("Delete user successfully"));
   } catch (error) {
@@ -177,6 +182,8 @@ export const createAnUser = async (newUser, accessToken, dispatch, history,axios
       headers: {
         token: accessToken,
       },
+      withCredntials: true,
+      credentials: 'include'
     });
     history.push("/users");
     dispatch(createUserSuccess(res.data));
@@ -193,7 +200,9 @@ export const getAllProducts = async (dispatch) => {
   dispatch(reset1());
   dispatch(getProductsStart());
   try {
-    const res = await axios.get("https://mern-stack-backend-kw0h.onrender.com/products/all");
+    const res = await axios.get("https://mern-stack-backend-kw0h.onrender.com/products/all",{
+      withCredntials: true,
+      credentials: 'include'});
     dispatch(getProductsSuccess(res.data));
   } catch (error) {
     dispatch(getProductsFailed());
