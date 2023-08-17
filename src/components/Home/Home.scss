@@ -1,5 +1,8 @@
 .home {
   background-color: rgb(243, 243, 243);
+  .carousel {
+    
+  }
   .home_product {
     display: flex;
     justify-content: center;
@@ -79,7 +82,9 @@
     .home__row > div:nth-child(3) {
       grid-column: 1 / span 3;
     }
-
+    .carousel {
+      width:90%;
+    }
     .home__row > div:nth-child(4) {
       grid-column: span 3;
     }
