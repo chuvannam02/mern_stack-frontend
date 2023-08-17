@@ -6,10 +6,11 @@ const refreshToken = async () => {
   try {
     let refreshToken1 = Cookies.get('refreshToken'); // => 'value'
     const res = await axios.post(
-      "http://localhost:3000/refresh",
+      "https://mern-stack-backend-kw0h.onrender.com/refresh",
         {refreshToken1},
       {
         withCredentials: true,
+        credentials: 'include' // This is important for sending cookies
       }
     );
     localStorage.setItem("token",`Bearer ${res.data.accessToken}`);
